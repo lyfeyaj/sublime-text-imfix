@@ -9,7 +9,7 @@ then
   echo ''
   echo '***** Adding Sublime Text 3 PPA *****'
   echo ''
-  sudo add-apt-repository ppa:webupd8team/sublime-text-3
+  sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
   
   echo ''
   echo '***** Updating system *****'
@@ -41,7 +41,7 @@ then
   echo ''
   echo '***** Adding Fcitx PPA *****'
   echo ''
-  sudo add-apt-repository ppa:fcitx-team/nightly
+  sudo add-apt-repository -y ppa:fcitx-team/nightly
   
   echo ''
   echo '***** Updating system *****'

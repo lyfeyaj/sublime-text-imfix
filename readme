@@ -1,9 +1,25 @@
-http://bbs.chinahtml.com/t319624/
+#### Sublime Text Imfix
 
-http://forum.ubuntu.org.cn/viewtopic.php?f=48&t=418712
+This is repo is aimed to fix sublime text 2 or 3's input method problem under Ubuntu
 
-http://webcache.googleusercontent.com/search?q=cache:_fB1ap6CqhAJ:www.sinosky.org/linux-sublime-text-fcitx.html+sublime+text+3+ubuntu+chinese&cd=2&hl=zh-CN&ct=clnk&gl=cn
+#### Step to use this repo
 
-http://forum.ubuntu.org.cn/viewtopic.php?t=391755
++ Clone this repo in your local directory : 
+
+    git clone https://github.com/lyfeyaj/sublime-text-imfix.git
+    
++ Change directory to this folder :
+
+    cd sublime-text-imfix
+    
++ Run the command : 
+
+    ./sublime-imfix
+
++ Done!
+
+#### Todo
+
++ Add compile detail to this README
 
     gcc -shared -o libsublime-imfix.so sublime_imfix.c  `pkg-config --libs --cflags gtk+-2.0` -fPIC
