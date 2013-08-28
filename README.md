@@ -32,7 +32,7 @@ cd sublime-text-imfix
 ./sublime-imfix
 ```
 
-+ Done!
++ Done! Re-login your X windows and start use sublime text 3 with fctix!
 
 ### Todo
 
