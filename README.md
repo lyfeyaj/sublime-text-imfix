@@ -1,25 +1,33 @@
-#### Sublime Text Imfix
+### Sublime Text Imfix
 
 This is repo is aimed to fix sublime text 2 or 3's input method problem under Ubuntu
 
-#### Step to use this repo
+### Step to use this repo
 
 + Clone this repo in your local directory : 
 
-    git clone https://github.com/lyfeyaj/sublime-text-imfix.git
+```bash
+git clone https://github.com/lyfeyaj/sublime-text-imfix.git
+```
     
 + Change directory to this folder :
 
-    cd sublime-text-imfix
+```bash
+cd sublime-text-imfix
+```
     
 + Run the command : 
 
-    ./sublime-imfix
+```bash
+./sublime-imfix
+```
 
 + Done!
 
-#### Todo
+### Todo
 
 + Add compile detail to this README
 
-    gcc -shared -o libsublime-imfix.so sublime_imfix.c  `pkg-config --libs --cflags gtk+-2.0` -fPIC
+```bash
+gcc -shared -o libsublime-imfix.so sublime_imfix.c  `pkg-config --libs --cflags gtk+-2.0` -fPIC
+```
