@@ -2,7 +2,13 @@
 
 This is repo is aimed to fix sublime text 2 or 3's input method problem under Ubuntu
 
-### Step to use this repo
+### Step to use this repo ###
+
++ Updata and upgrade your system to the newst
+
+```bash
+sudo apt-get update && sudo apt-get upgrade
+```
 
 + Clone this repo in your local directory : 
 
