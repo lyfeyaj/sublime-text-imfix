@@ -62,6 +62,7 @@ then
   echo ''
   echo '***** Fcitx installed successfully! *****'
   echo ''
+  echo '***** Setting Fcitx as the default input method! *****'
   im-switch -s fcitx -z default
 else
   echo ''
