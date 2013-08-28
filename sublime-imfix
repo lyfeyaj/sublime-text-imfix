@@ -107,4 +107,4 @@ sudo cp -r anran /usr/share/fcitx/skin/
 rm -r anran
 
 echo ''
-echo '***** Done! *****'
+echo '***** Done! Re-login your X windows and start use Sublime Text 3 with Fctix! *****'
