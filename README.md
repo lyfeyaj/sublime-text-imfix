@@ -1,6 +1,10 @@
 ### Sublime Text Imfix
 
-This is repo is aimed to fix sublime text 2 or 3's input method problem under Ubuntu
+This is repo is aimed to do three things:
+
++ Install Sublime Text 3
++ Install Fcitx
++ Fix sublime text 2 or 3's input method problem under Ubuntu
 
 ### Step to use this repo ###
 
