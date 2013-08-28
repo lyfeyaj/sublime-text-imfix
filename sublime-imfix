@@ -99,7 +99,7 @@ echo '***** More......installing addtional skin *****'
 echo ''
 echo '***** Un-packing skin into current folders *****'
 echo ''
-tar -zxvf /src/anran.tar.gz
+tar -zxvf src/anran.tar.gz
 
 echo '***** Copy skins to Fcitx skin folder: /usr/share/fcitx/skin *****'
 echo ''
