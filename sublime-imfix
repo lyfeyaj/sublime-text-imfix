@@ -7,25 +7,25 @@ read sublime_input
 if [ $sublime_input == 'N' ] || [ $sublime_input == 'n' ]
 then
   echo ''
-  echo '***** Adding Sublime Text 3 PPA *****'
+  echo '**************** Adding Sublime Text 3 PPA *****************'
   echo ''
   sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
   
   echo ''
-  echo '***** Updating system *****'
+  echo '**************** Updating system ***************************'
   echo ''
   sudo apt-get update && sudo apt-get upgrade
   
   echo ''
-  echo '***** Installing Sublime Text 3 *****'
+  echo '**************** Installing Sublime Text 3 *****************'
   echo ''
   sudo apt-get install -y sublime-text-installer
   
   echo ''
-  echo '***** Sublime Text 3 installed successfully *****'
+  echo '**************** Sublime Text 3 installed successfully *****'
 else
   echo ''
-  echo '***** Skip installing Sublime Text 3 *****'
+  echo '**************** Skip installing Sublime Text 3 ************'
 fi
 
 echo ''
@@ -37,68 +37,71 @@ if [ $fcitx_input == 'N' ] || [ $fcitx_input == 'n' ]
 then
   
   echo ''
-  echo '***** Adding Fcitx PPA *****'
+  echo '**************** Adding Fcitx PPA **************************'
   echo ''
   sudo add-apt-repository -y ppa:fcitx-team/nightly
   
   echo ''
-  echo '***** Updating system *****'
+  echo '**************** Updating system ***************************'
   echo ''
   sudo apt-get update
 
   echo ''
-  echo '***** Installing Fcitx and Pinyin methods *****'
+  echo '**************** Installing Fcitx and Pinyin methods *******'
   echo ''
   sudo apt-get install -y fcitx fcitx-config-gtk fcitx-sunpinyin fcitx-googlepinyin fcitx-module-cloudpinyin fcitx-sogoupinyin
 
   echo ''
-  echo '***** Installing Fcitx related libs *****'
+  echo '**************** Installing Fcitx related libs *************'
   echo ''
   sudo apt-get install -y build-essential libgtk2.0-dev
   sudo apt-get install -y fcitx-table-all
   
   echo ''
-  echo '***** Fcitx installed successfully! *****'
+  echo '**************** Fcitx installed successfully! **************'
   echo ''
-  echo '***** Setting Fcitx as the default input method! *****'
+  echo '**************** Setting Fcitx as the default input method! *'
   im-switch -s fcitx -z default
 else
   echo ''
-  echo '***** Skip installing Fcitx *****'
+  echo '**************** Skip installing Fcitx **********************'
 fi
 
 echo ''
-echo '***** Adding shared lib to sublime directory *****'
+echo '**************** Adding shared lib to sublime directory *****'
 echo ''
-echo '***** Checking for existing file *****'
+echo '**************** Checking for existing file *****************'
 if [ -e '/opt/sublime_text/libsublime-imfix.so']
   then
   sudo cp ./lib/libsublime-imfix.so /opt/sublime_text/
 else
   echo ''
-  echo '***** libsublime-imfix.so is already existing *****'
+  echo '**************** libsublime-imfix.so is already existing ****'
 fi
 
 echo ''
-echo '***** Replacing subl with new one *****'
+echo '**************** Replacing subl with new one ****************'
 echo ''
-if [ -e 'rm /usr/bin/subl' ]
+if [ -e '/usr/bin/subl' ]
   then
   sudo rm /usr/bin/subl && sudo cp ./src/subl /usr/bin/
 fi
 
-echo '***** Sublime Text input method problem fixed! *****'
+echo '**************** Sublime Text input method problem fixed! ****'
 echo ''
-echo '***** More......installing addtional skin *****'
+echo '**************** More installing addtional skin **************'
 echo ''
-echo '***** Un-packing skin into current folders *****'
+echo '**************** Un-packing skin into current folders ********'
 echo ''
 tar -zxvf src/anran.tar.gz
 
-echo '***** Copy skins to Fcitx skin folder: /usr/share/fcitx/skin *****'
+echo '*** Copy skin to Fcitx skin folder: /usr/share/fcitx/skin ****'
 echo ''
 sudo cp -r anran /usr/share/fcitx/skin/
 rm -r anran
 
+echo 'Done!'
 echo ''
-echo '***** Done! Re-login your X windows and start use Sublime Text 3 with Fctix! *****'
+echo 'Thanks for using this scripts to fix sublime text and input method.'
+echo ''
+echo 'Re-login your X windows and start use Sublime Text 3 with Fctix!'
