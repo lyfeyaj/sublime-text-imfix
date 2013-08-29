@@ -14,7 +14,7 @@ then
   echo ''
   echo '***** Updating system *****'
   echo ''
-  sudo apt-get update
+  sudo apt-get update && sudo apt-get upgrade
   
   echo ''
   echo '***** Installing Sublime Text 3 *****'
@@ -23,11 +23,9 @@ then
   
   echo ''
   echo '***** Sublime Text 3 installed successfully *****'
-  echo ''
 else
   echo ''
   echo '***** Skip installing Sublime Text 3 *****'
-  echo ''
 fi
 
 echo ''
@@ -67,7 +65,6 @@ then
 else
   echo ''
   echo '***** Skip installing Fcitx *****'
-  echo ''
 fi
 
 echo ''
@@ -90,10 +87,7 @@ if [ -e 'rm /usr/bin/subl' ]
   sudo rm /usr/bin/subl && sudo cp ./src/subl /usr/bin/
 fi
 
-echo ''
 echo '***** Sublime Text input method problem fixed! *****'
-echo ''
-
 echo ''
 echo '***** More......installing addtional skin *****'
 echo ''
