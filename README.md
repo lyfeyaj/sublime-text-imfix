@@ -34,6 +34,10 @@ cd sublime-text-imfix
 
 + Done! Re-login your X windows and start use sublime text 3 with fctix!
 
+### Completion Preview Image:
+
+![Fcitx](image/fcitx.png)
+
 ### Todo
 
 + Add compile detail to this README
