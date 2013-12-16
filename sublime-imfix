@@ -1,107 +1,125 @@
 #!/bin/bash
 
-echo 'Have you already installed Sublime Text 3? [Y/N]'
-
-read sublime_input
-
-if [ $sublime_input == 'N' ] || [ $sublime_input == 'n' ]
+echo "Checking for installation of Sublime Text 3...."
+if which -s subl
 then
-  echo ''
-  echo '**************** Adding Sublime Text 3 PPA *****************'
-  echo ''
-  sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
-  
-  echo ''
-  echo '**************** Updating and upgrading system **************'
-  echo ''
-  sudo apt-get update > /dev/null && sudo apt-get upgrade > /dev/null
-  
-  echo ''
-  echo '**************** Installing Sublime Text 3 *****************'
-  echo ''
-  sudo apt-get install -y sublime-text-installer > /dev/null
-  
-  echo ''
-  echo '**************** Sublime Text 3 installed successfully *****'
+
+  echo "It seems that you do not install Sublime Text 3 in your system."
+  echo 'Do you want to install it? [Y/N]'
+
+  read sublime_input
+
+  if [ $sublime_input == 'Y' ] || [ $sublime_input == 'y' ]
+  then
+    echo ''
+    echo '**************** Adding Sublime Text 3 PPA *****************'
+    echo ''
+    sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
+
+    echo ''
+    echo '**************** Updating and upgrading system **************'
+    echo ''
+    sudo apt-get update > /dev/null && sudo apt-get upgrade > /dev/null
+
+    echo ''
+    echo '**************** Installing Sublime Text 3 *****************'
+    echo ''
+    sudo apt-get install -y sublime-text-installer > /dev/null
+
+    echo ''
+    echo '**************** Sublime Text 3 installed successfully *****'
+  else
+    echo ''
+    echo '**************** Skip installing Sublime Text 3 ************'
+  fi
 else
-  echo ''
-  echo '**************** Skip installing Sublime Text 3 ************'
+  echo ".............................................Installed"
 fi
 
 echo ''
-echo 'Have you already installed Fcitx? [Y/N]'
+echo "Checking for installation of Fcitx Input Methods...."
 
-read fcitx_input
-
-if [ $fcitx_input == 'N' ] || [ $fcitx_input == 'n' ]
+if which -s fcitx
 then
-  
-  echo ''
-  echo '**************** Adding Fcitx PPA **************************'
-  echo ''
-  sudo add-apt-repository -y ppa:fcitx-team/nightly
-  
-  echo ''
-  echo '**************** Updating system ***************************'
-  echo ''
-  sudo apt-get update > /dev/null
 
-  echo ''
-  echo '**************** Installing Fcitx and Pinyin methods *******'
-  echo ''
-  sudo apt-get install -y fcitx fcitx-config-gtk fcitx-sunpinyin fcitx-googlepinyin fcitx-module-cloudpinyin fcitx-sogoupinyin > /dev/null
+  echo 'Do you want to install Fcitx? [Y/N]'
 
-  echo ''
-  echo '**************** Installing Fcitx related libs *************'
-  echo ''
-  sudo apt-get install -y build-essential libgtk2.0-dev > /dev/null
-  sudo apt-get install -y fcitx-table-all > /dev/null
-  
-  echo ''
-  echo '**************** Fcitx installed successfully! **************'
-  echo ''
-  echo '**************** Setting Fcitx as the default input method! *'
-  im-switch -s fcitx -z default
-else
-  echo ''
-  echo '**************** Skip installing Fcitx **********************'
-fi
+  read fcitx_input
 
-echo ''
-echo '**************** Adding shared lib to sublime directory *****'
-echo ''
-echo '**************** Checking for existing file *****************'
-if [ -e '/opt/sublime_text/libsublime-imfix.so']
+  if [ $fcitx_input == 'Y' ] || [ $fcitx_input == 'y' ]
   then
-  sudo cp ./lib/libsublime-imfix.so /opt/sublime_text/
-else
+
+    echo ''
+    echo '**************** Adding Fcitx PPA **************************'
+    echo ''
+    sudo add-apt-repository -y ppa:fcitx-team/nightly
+
+    echo ''
+    echo '**************** Updating system ***************************'
+    echo ''
+    sudo apt-get update > /dev/null
+
+    echo ''
+    echo '**************** Installing Fcitx and Pinyin methods *******'
+    echo ''
+    sudo apt-get install -y fcitx fcitx-config-gtk fcitx-sunpinyin fcitx-googlepinyin fcitx-module-cloudpinyin fcitx-sogoupinyin > /dev/null
+
+    echo ''
+    echo '**************** Installing Fcitx related libs *************'
+    echo ''
+    sudo apt-get install -y build-essential libgtk2.0-dev > /dev/null
+    sudo apt-get install -y fcitx-table-all > /dev/null
+
+    echo ''
+    echo '**************** Fcitx installed successfully! **************'
+    echo ''
+    echo '**************** Setting Fcitx as the default input method! *'
+    im-switch -s fcitx -z default
+  else
+    echo ''
+    echo '**************** Skip installing Fcitx **********************'
+  fi
+
   echo ''
-  echo '**************** libsublime-imfix.so is already existing ****'
+  echo '**************** Adding shared lib to sublime directory *****'
+  echo ''
+  echo '**************** Checking for existing file *****************'
+  if [ -e '/opt/sublime_text/libsublime-imfix.so']
+    then
+    sudo cp ./lib/libsublime-imfix.so /opt/sublime_text/
+  else
+    echo ''
+    echo '**************** libsublime-imfix.so is already existing ****'
+  fi
+
+  echo ''
+  echo '**************** Replacing subl with new one ****************'
+  echo ''
+  if [ -e '/usr/bin/subl' ]
+    then
+    sudo rm /usr/bin/subl && sudo cp ./src/subl /usr/bin/
+  fi
+
+  echo '**************** Sublime Text input method problem fixed! ****'
+  echo ''
+  echo '**************** More installing addtional skin **************'
+  echo ''
+  echo '**************** Un-packing skin into current folders ********'
+  echo ''
+  tar -zxvf src/anran.tar.gz
+
+  echo '*** Copy skin to Fcitx skin folder: /usr/share/fcitx/skin ****'
+  echo ''
+  sudo cp -r anran /usr/share/fcitx/skin/
+  rm -r anran
+
+  echo 'Done!'
+  echo ''
+  echo 'Thanks for using this scripts to fix sublime text and input method.'
+  echo ''
+  echo 'Re-login your X windows and start use Sublime Text 3 with Fctix!'
+
+else
+  echo "...........................................Installed"
 fi
 
-echo ''
-echo '**************** Replacing subl with new one ****************'
-echo ''
-if [ -e '/usr/bin/subl' ]
-  then
-  sudo rm /usr/bin/subl && sudo cp ./src/subl /usr/bin/
-fi
-
-echo '**************** Sublime Text input method problem fixed! ****'
-echo ''
-echo '**************** More installing addtional skin **************'
-echo ''
-echo '**************** Un-packing skin into current folders ********'
-echo ''
-tar -zxvf src/anran.tar.gz
-
-echo '*** Copy skin to Fcitx skin folder: /usr/share/fcitx/skin ****'
-echo ''
-sudo cp -r anran /usr/share/fcitx/skin/
-rm -r anran
-
-echo 'Done!'
-echo ''
-echo 'Thanks for using this scripts to fix sublime text and input method.'
-echo ''
-echo 'Re-login your X windows and start use Sublime Text 3 with Fctix!'
