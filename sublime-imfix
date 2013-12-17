@@ -1,9 +1,10 @@
 #!/bin/bash
 
-echo "Checking for installation of Sublime Text 3...."
+echo "Checking for installation of Sublime Text 3..........."
 if which -s subl
 then
-
+echo ".............................................Installed"
+else
   echo "It seems that you do not install Sublime Text 3 in your system."
   echo 'Do you want to install it? [Y/N]'
 
@@ -19,12 +20,12 @@ then
     echo ''
     echo '**************** Updating and upgrading system **************'
     echo ''
-    sudo apt-get update > /dev/null && sudo apt-get upgrade > /dev/null
+    sudo apt-get update >> /dev/null && sudo apt-get upgrade >> /dev/null
 
     echo ''
     echo '**************** Installing Sublime Text 3 *****************'
     echo ''
-    sudo apt-get install -y sublime-text-installer > /dev/null
+    sudo apt-get install -y sublime-text-installer >> /dev/null
 
     echo ''
     echo '**************** Sublime Text 3 installed successfully *****'
@@ -32,8 +33,6 @@ then
     echo ''
     echo '**************** Skip installing Sublime Text 3 ************'
   fi
-else
-  echo ".............................................Installed"
 fi
 
 echo ''
@@ -41,14 +40,15 @@ echo "Checking for installation of Fcitx Input Methods...."
 
 if which -s fcitx
 then
-
-  echo 'Do you want to install Fcitx? [Y/N]'
+  echo "...........................................Installed"
+else
+  echo "It seems that you do not install Fcitx Input Method in your system."
+  echo 'Do you want to install it? [Y/N]'
 
   read fcitx_input
 
   if [ $fcitx_input == 'Y' ] || [ $fcitx_input == 'y' ]
   then
-
     echo ''
     echo '**************** Adding Fcitx PPA **************************'
     echo ''
@@ -57,7 +57,7 @@ then
     echo ''
     echo '**************** Updating system ***************************'
     echo ''
-    sudo apt-get update > /dev/null
+    sudo apt-get update >> /dev/null
 
     echo ''
     echo '**************** Installing Fcitx and Pinyin methods *******'
@@ -67,8 +67,8 @@ then
     echo ''
     echo '**************** Installing Fcitx related libs *************'
     echo ''
-    sudo apt-get install -y build-essential libgtk2.0-dev > /dev/null
-    sudo apt-get install -y fcitx-table-all > /dev/null
+    sudo apt-get install -y build-essential libgtk2.0-dev >> /dev/null
+    sudo apt-get install -y fcitx-table-all >> /dev/null
 
     echo ''
     echo '**************** Fcitx installed successfully! **************'
@@ -77,9 +77,12 @@ then
     im-switch -s fcitx -z default
   else
     echo ''
-    echo '**************** Skip installing Fcitx **********************'
+    echo '**************** Skip installing Sublime Text 3 ************'
   fi
+fi
 
+if which -s subl && which -s fcitx
+then
   echo ''
   echo '**************** Adding shared lib to sublime directory *****'
   echo ''
@@ -118,8 +121,4 @@ then
   echo 'Thanks for using this scripts to fix sublime text and input method.'
   echo ''
   echo 'Re-login your X windows and start use Sublime Text 3 with Fctix!'
-
-else
-  echo "...........................................Installed"
 fi
-
