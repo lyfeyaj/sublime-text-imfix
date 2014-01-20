@@ -38,6 +38,10 @@ cd sublime-text-imfix
 
 ![Fcitx](image/fcitx.png)
 
+### Important Note
+
++ **Sublime Text 3 input method fix is only work when call from terminal, such as `subl .`**
+
 ### Todo
 
 + Add compile detail to this README
