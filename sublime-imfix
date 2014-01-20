@@ -118,7 +118,7 @@ then
 
   echo 'Done!'
   echo ''
-  echo 'Thanks for using this scripts to fix sublime text and input method.'
+  echo 'Thanks for using this script to fix sublime text and input method.'
   echo ''
-  echo 'Re-login your X windows and start use Sublime Text 3 with Fctix!'
+  echo 'Re-login your X windows and start to use Sublime Text 3 with Fctix!'
 fi
