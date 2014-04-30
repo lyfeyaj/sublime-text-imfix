@@ -87,12 +87,12 @@ then
   echo '**************** Adding shared lib to sublime directory *****'
   echo ''
   echo '**************** Checking for existing file *****************'
-  if [ -e '/opt/sublime_text/libsublime-imfix.so']
+  if [ -e '/opt/sublime_text/libsublime-imfix.so' ]
     then
-    sudo cp ./lib/libsublime-imfix.so /opt/sublime_text/
-  else
     echo ''
     echo '**************** libsublime-imfix.so is already existing ****'
+  else
+    sudo cp ./lib/libsublime-imfix.so /opt/sublime_text/
   fi
 
   echo ''
@@ -105,20 +105,20 @@ then
 
   echo '**************** Sublime Text input method problem fixed! ****'
   echo ''
-  echo '**************** More installing addtional skin **************'
+  echo '**************** More: Installing extra skins ****************'
   echo ''
   echo '**************** Un-packing skin into current folders ********'
   echo ''
   tar -zxvf src/anran.tar.gz
 
-  echo '*** Copy skin to Fcitx skin folder: /usr/share/fcitx/skin ****'
+  echo '** Copying skin to Fcitx skin folder: /usr/share/fcitx/skin **'
   echo ''
   sudo cp -r anran /usr/share/fcitx/skin/
   rm -r anran
 
   echo 'Done!'
   echo ''
-  echo 'Thanks for using this script to fix sublime text and input method.'
+  echo 'Thanks for using this script to fix SublimeText 3 for Input Method.'
   echo ''
-  echo 'Re-login your X windows and start to use Sublime Text 3 with Fctix!'
+  echo 'Re-login your X windows and start to use SublimeText 3 with Fctix!'
 fi

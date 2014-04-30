@@ -40,7 +40,7 @@ cd sublime-text-imfix
 
 ### Important Note
 
-+ **Sublime Text 3 input method fix is only work when call from terminal, such as `subl .`**
++ **Sublime Text 3 input method fix only works when calling from terminal, such as `subl .`**
 
 ### Todo
 
