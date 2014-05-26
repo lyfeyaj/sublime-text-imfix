@@ -88,4 +88,4 @@ cd sublime-text-imfix && ./sublime-imfix
 
 ### 重要提示:
 
-+ **这个修复仅当在终端中使用 `subl .` 调用Sublime Text的时候有效, 具体原因请看源代码**
++ **这个修复仅当在终端中使用 `subl .` 调用Sublime Text的时候有效, 具体原因请看源代码[src/subl](https://github.com/lyfeyaj/sublime-text-imfix/blob/master/src/subl)**
