@@ -1,12 +1,12 @@
 ### Sublime Text Imfix
 
-This repo is aimed to do three things:
+This repo is aimed at doing below three things:
 
 + Install Sublime Text 3
 + Install Fcitx Input Method
 + Fix Sublime Text 2/3's input method problem under Ubuntu(Debian) System
 
-### Step to use this repo ###
+### Steps to use this repo ###
 
 + Update and then upgrade your system to the newest
 
@@ -20,7 +20,7 @@ sudo apt-get update && sudo apt-get upgrade
 git clone https://github.com/lyfeyaj/sublime-text-imfix.git
 ```
     
-+ Change your current directory to this folder `sublime-text-imfix`:
++ Change your current directory to `sublime-text-imfix`:
 
 ```bash
 cd sublime-text-imfix
@@ -80,7 +80,7 @@ git clone https://github.com/lyfeyaj/sublime-text-imfix.git
 cd sublime-text-imfix && ./sublime-imfix
 ```
 
-+ 完成! 重新启动后就可以在Sublime Text 2/3 中 使用Fcitx了!
++ 完成! 重新启动后就可以在Sublime Text 2/3 中 使用Fcitx了! 注意: 皮肤可能需要自己选择 ^_^
 
 ### 效果图:
 
