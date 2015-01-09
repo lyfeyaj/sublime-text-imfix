@@ -38,10 +38,6 @@ cd sublime-text-imfix
 
 ![Fcitx](image/fcitx.png)
 
-### Important Note
-
-+ **Sublime Text 3 input method fix only works when calling from terminal, such as `subl .`**
-
 ### Todo
 
 + Add compile detail to this README
@@ -86,6 +82,3 @@ cd sublime-text-imfix && ./sublime-imfix
 
 ![Fcitx](image/fcitx.png)
 
-### 重要提示:
-
-+ **这个修复仅当在终端中使用 `subl .` 调用Sublime Text的时候有效, 具体原因请看源代码[src/subl](https://github.com/lyfeyaj/sublime-text-imfix/blob/master/src/subl)**

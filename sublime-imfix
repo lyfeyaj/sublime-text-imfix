@@ -96,11 +96,11 @@ then
   fi
 
   echo ''
-  echo '**************** Replacing subl with new one ****************'
+  echo '**************** wrap the sublime_text binary ****************'
   echo ''
-  if [ -e '/usr/bin/subl' ]
+  if [ -e '/opt/sublime_text/sublime_text' ]
     then
-    sudo rm /usr/bin/subl && sudo cp ./src/subl /usr/bin/
+    sudo mv /opt/sublime_text/sublime_text /opt/sublime_text/real_sublime_text  && sudo cp ./src/sublime_text /opt/sublime_text/
   fi
 
   echo '**************** Sublime Text input method problem fixed! ****'
