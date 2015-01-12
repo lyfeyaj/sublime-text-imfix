@@ -1,4 +1,4 @@
-### Sublime Text Imfix
+### Sublime Text IM Fix
 
 This repo is aimed at doing below three things:
 
@@ -40,10 +40,11 @@ cd sublime-text-imfix
 
 ### Important Note
 
-+ **Sublime Text 3 input method fix only works when calling from terminal, such as `subl .`**
++ **Sublime Text 3 input method fix only works when executing from terminal, such as `subl .`**
 
 ### Todo
 
++ Add desktop launcher
 + Add compile detail to this README
 
 ```bash
