@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Checking for installation of Sublime Text 3..........."
-if which -s subl
+if which subl
 then
 echo ".............................................Installed"
 else
@@ -38,7 +38,7 @@ fi
 echo ''
 echo "Checking for installation of Fcitx Input Methods...."
 
-if which -s fcitx
+if which fcitx
 then
   echo "...........................................Installed"
 else
@@ -81,7 +81,7 @@ else
   fi
 fi
 
-if which -s subl && which -s fcitx
+if which subl && which fcitx
 then
   echo ''
   echo '**************** Adding shared lib to sublime directory *****'
