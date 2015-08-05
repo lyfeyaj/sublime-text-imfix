@@ -1,4 +1,4 @@
-### Sublime Text IM Fix
+### Sublime Text 3 Input Method (Fcitx) Fix [Ubuntu(Debian)]
 
 This repo is aimed at doing below three things:
 
