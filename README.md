@@ -1,11 +1,19 @@
 ### Sublime Text 2/3 Input Method (Fcitx) Fix [Ubuntu(Debian)]
 
+### 更新：
+
++ (new)通过Ubuntu系统图标打开的Sublime也支持Fcitx输入中文了（持Dash图标启动）
+
+
++ (new)Now,Sublime opened by Icon.desktop can also use Fcitx Input（Dash Icon also work）
+
+----
+
 This repo is aimed at doing below three things:
 
 + Install Sublime Text 3
 + Install Fcitx Input Method
 + Fix Sublime Text 2/3's input method problem under Ubuntu(Debian) System
-+ (new)Now,Sublime opened by Icon.desktop can also use Fcitx Input
 
 ### **Important Note**
 
