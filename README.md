@@ -2,7 +2,7 @@
 
 ### 更新：
 
-+ (new)通过Ubuntu系统图标打开的Sublime也支持Fcitx输入中文了（持Dash图标启动）
++ (new)通过Ubuntu系统图标打开的Sublime也支持Fcitx输入中文了（支持Dash图标启动）
 
 
 + (new)Now,Sublime opened by Icon.desktop can also use Fcitx Input（Dash Icon also work）
