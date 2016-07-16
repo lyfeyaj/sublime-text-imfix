@@ -5,6 +5,7 @@ This repo is aimed at doing below three things:
 + Install Sublime Text 3
 + Install Fcitx Input Method
 + Fix Sublime Text 2/3's input method problem under Ubuntu(Debian) System
++ (new)Now,Sublime opened by Icon.desktop can also use Fcitx Input
 
 ### **Important Note**
 
@@ -18,19 +19,19 @@ This repo is aimed at doing below three things:
 sudo apt-get update && sudo apt-get upgrade
 ```
 
-+ Clone this repo in your local directory : 
++ Clone this repo in your local directory :
 
 ```bash
 git clone https://github.com/lyfeyaj/sublime-text-imfix.git
 ```
-    
+
 + Change your current directory to `sublime-text-imfix`:
 
 ```bash
 cd sublime-text-imfix
 ```
-    
-+ Run the below script : 
+
++ Run the below script :
 
 ```bash
 ./sublime-imfix
@@ -42,10 +43,7 @@ cd sublime-text-imfix
 
 ![Fcitx](image/fcitx.png)
 
-### Todo
 
-+ Add desktop launcher
-+ Add compile detail to this README
 
 ```bash
 gcc -shared -o libsublime-imfix.so sublime_imfix.c  `pkg-config --libs --cflags gtk+-2.0` -fPIC
@@ -60,6 +58,7 @@ gcc -shared -o libsublime-imfix.so sublime_imfix.c  `pkg-config --libs --cflags 
 + 安装 Sublime Text 3
 + 安装 Fcitx 输入法 + 皮肤
 + 修复 Sublime Text 2/3's 在 Ubuntu(Debian) 系统下的无法输入中文输入法的问题
++ (new)通过Ubuntu系统图标打开的Sublime也支持Fcitx输入中文了
 
 ### **注意**
 
@@ -73,13 +72,13 @@ gcc -shared -o libsublime-imfix.so sublime_imfix.c  `pkg-config --libs --cflags 
 sudo apt-get update && sudo apt-get upgrade
 ```
 
-+ 克隆项目到本地 : 
++ 克隆项目到本地 :
 
 ```bash
 git clone https://github.com/lyfeyaj/sublime-text-imfix.git
 ```
 
-+ 运行脚本 : 
++ 运行脚本 :
 
 ```bash
 cd sublime-text-imfix && ./sublime-imfix
