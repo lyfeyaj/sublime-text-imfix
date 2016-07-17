@@ -91,6 +91,8 @@ then
     then
     echo ''
     echo '**************** libsublime-imfix.so is already existing ****'
+    sudo rm /opt/sublime_text/libsublime-imfix.so
+    sudo cp ./lib/libsublime-imfix.so /opt/sublime_text/
   else
     sudo cp ./lib/libsublime-imfix.so /opt/sublime_text/
   fi
