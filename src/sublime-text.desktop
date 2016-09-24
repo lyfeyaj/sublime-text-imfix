@@ -5,7 +5,7 @@ Name=Sublime Text
 GenericName=Text Editor
 Comment=Sophisticated text editor for code, markup and prose
 #Exec=/opt/sublime_text/sublime_text %F
-Exec=env LD_PRELOAD=/opt/sublime_text/libsublime-imfix.so /opt/sublime_text/sublime_text %F
+Exec=/usr/bin/subl %F
 Terminal=false
 MimeType=text/plain;
 Icon=sublime-text
@@ -16,11 +16,11 @@ Actions=Window;Document;
 [Desktop Action Window]
 Name=New Window
 #Exec=/opt/sublime_text/sublime_text -n
-Exec=env LD_PRELOAD=/opt/sublime_text/libsublime-imfix.so /opt/sublime_text/sublime_text -n
+Exec=/usr/bin/subl -n
 OnlyShowIn=Unity;
 
 [Desktop Action Document]
 Name=New File
 #Exec=/opt/sublime_text/sublime_text --command new_file
-Exec=env LD_PRELOAD=/opt/sublime_text/libsublime-imfix.so /opt/sublime_text/sublime_text --command new_file
+Exec=/usr/bin/subl --command new_file
 OnlyShowIn=Unity;
