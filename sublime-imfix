@@ -5,8 +5,8 @@ if which subl
 then
 echo ".............................................Installed"
 else
-  echo "It seems that you do not install Sublime Text 3 in your system."
-  echo 'Do you want to install it? [Y/N]'
+  echo "It seems you do not install Sublime Text 3 in your system."
+  echo -n 'Do you want to install it? [Y/N]: '
 
   read sublime_input
 
@@ -43,7 +43,7 @@ then
   echo "...........................................Installed"
 else
   echo "It seems that you do not install Fcitx Input Method in your system."
-  echo 'Do you want to install it? [Y/N]'
+  echo -n 'Do you want to install it? [Y/N]: '
 
   read fcitx_input
 
