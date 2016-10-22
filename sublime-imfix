@@ -104,10 +104,10 @@ then
     then
     sudo rm /usr/bin/subl && sudo cp ./src/subl /usr/bin/
   fi
-  echo '**************** Replacing sublime-text.desktop with new one ****************'
-  if [ -e '/usr/share/applications/sublime-text.desktop' ]
+  echo '**************** Replacing sublime_text.desktop with new one ****************'
+  if [ -e '/usr/share/applications/sublime_text.desktop' ]
     then
-    sudo rm /usr/share/applications/sublime-text.desktop && sudo cp ./src/sublime-text.desktop /usr/share/applications/
+    sudo rm /usr/share/applications/sublime_text.desktop && sudo cp ./src/sublime-text.desktop /usr/share/applications/
     sudo chmod 644 /usr/share/applications/sublime-text.desktop
   fi
   echo '**************** Sublime Text input method problem fixed! ****'
