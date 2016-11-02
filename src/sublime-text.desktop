@@ -12,6 +12,7 @@ Icon=sublime-text
 Categories=TextEditor;Development;
 StartupNotify=true
 Actions=Window;Document;
+StartupWMClass=Sublime_text
 
 [Desktop Action Window]
 Name=New Window
