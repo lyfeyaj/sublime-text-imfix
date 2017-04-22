@@ -87,14 +87,14 @@ then
   echo '**************** Adding shared lib to sublime directory *****'
   echo ''
   echo '**************** Checking for existing file *****************'
-  if [ -e '/opt/sublime_text/libsublime-imfix.so' ]
+  if [ -e '/opt/sublime_text_3/libsublime-imfix.so' ]
     then
     echo ''
     echo '**************** libsublime-imfix.so is already existing ****'
-    sudo rm /opt/sublime_text/libsublime-imfix.so
-    sudo cp ./lib/libsublime-imfix.so /opt/sublime_text/
+    sudo rm /opt/sublime_text_3/libsublime-imfix.so
+    sudo cp ./lib/libsublime-imfix.so /opt/sublime_text_3/
   else
-    sudo cp ./lib/libsublime-imfix.so /opt/sublime_text/
+    sudo cp ./lib/libsublime-imfix.so /opt/sublime_text_3/
   fi
 
   echo ''

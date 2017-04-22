@@ -4,7 +4,7 @@ Type=Application
 Name=Sublime Text
 GenericName=Text Editor
 Comment=Sophisticated text editor for code, markup and prose
-#Exec=/opt/sublime_text/sublime_text %F
+#Exec=/opt/sublime_text_3/sublime_text %F
 Exec=/usr/bin/subl %F
 Terminal=false
 MimeType=text/plain;
@@ -16,12 +16,12 @@ StartupWMClass=Sublime_text
 
 [Desktop Action Window]
 Name=New Window
-#Exec=/opt/sublime_text/sublime_text -n
+#Exec=/opt/sublime_text_3/sublime_text -n
 Exec=/usr/bin/subl -n
 OnlyShowIn=Unity;
 
 [Desktop Action Document]
 Name=New File
-#Exec=/opt/sublime_text/sublime_text --command new_file
+#Exec=/opt/sublime_text_3/sublime_text --command new_file
 Exec=/usr/bin/subl --command new_file
 OnlyShowIn=Unity;
