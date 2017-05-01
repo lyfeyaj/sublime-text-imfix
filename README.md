@@ -32,7 +32,7 @@ sudo apt-get update && sudo apt-get upgrade
 + Clone this repo in your local directory :
 
 ```bash
-git clone https://github.com/lyfeyaj/sublime-text-imfix.git
+git clone https://github.com/inouetoukyou/sublime-text-imfix.git
 ```
 
 + Change your current directory to `sublime-text-imfix`:
