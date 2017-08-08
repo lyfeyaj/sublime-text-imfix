@@ -13,25 +13,25 @@ else
   if [ $sublime_input == 'Y' ] || [ $sublime_input == 'y' ]
   then
     echo ''
-    echo '**************** Adding Sublime Text 3 PPA *****************'
+    echo '*********** Adding Sublime Text 3 PPA **********************'
     echo ''
     sudo add-apt-repository -y ppa:webupd8team/sublime-text-3
 
     echo ''
-    echo '**************** Updating system ***************************'
+    echo '*********** Updating system ********************************'
     echo ''
     sudo apt-get update >> /dev/null
 
     echo ''
-    echo '**************** Installing Sublime Text 3 *****************'
+    echo '*********** Installing Sublime Text 3 **********************'
     echo ''
     sudo apt-get install -y sublime-text-installer >> /dev/null
 
     echo ''
-    echo '**************** Sublime Text 3 installed successfully *****'
+    echo '*********** Sublime Text 3 installed successfully **********'
   else
     echo ''
-    echo '**************** Skip installing Sublime Text 3 ************'
+    echo '*********** Skip installing Sublime Text 3 *****************'
   fi
 fi
 
@@ -50,47 +50,47 @@ else
   if [ $fcitx_input == 'Y' ] || [ $fcitx_input == 'y' ]
   then
     echo ''
-    echo '**************** Adding Fcitx PPA **************************'
+    echo '*********** Adding Fcitx PPA *******************************'
     echo ''
     sudo add-apt-repository -y ppa:fcitx-team/nightly
 
     echo ''
-    echo '**************** Updating system ***************************'
+    echo '*********** Updating system ********************************'
     echo ''
     sudo apt-get update >> /dev/null
 
     echo ''
-    echo '**************** Installing Fcitx and Pinyin methods *******'
+    echo '*********** Installing Fcitx and Pinyin methods ************'
     echo ''
     sudo apt-get install -y fcitx fcitx-config-gtk fcitx-sunpinyin fcitx-googlepinyin fcitx-module-cloudpinyin fcitx-sogoupinyin >> /dev/null
 
     echo ''
-    echo '**************** Installing Fcitx related libs *************'
+    echo '*********** Installing Fcitx related libs ******************'
     echo ''
     sudo apt-get install -y build-essential libgtk2.0-dev >> /dev/null
     sudo apt-get install -y fcitx-table-all >> /dev/null
 
     echo ''
-    echo '**************** Fcitx installed successfully! **************'
+    echo '*********** Fcitx installed successfully! *******************'
     echo ''
-    echo '**************** Setting Fcitx as the default input method! *'
+    echo '*********** Setting Fcitx as the default input method! ******'
     im-switch -s fcitx -z default
   else
     echo ''
-    echo '**************** Skip installing Sublime Text 3 ************'
+    echo '*********** Skip installing Sublime Text 3 *****************'
   fi
 fi
 
 if which subl && which fcitx
 then
   echo ''
-  echo '**************** Adding shared lib to sublime directory *****'
+  echo '*********** Adding shared lib to sublime directory ***********'
   echo ''
-  echo '**************** Checking for existing file *****************'
+  echo '*********** Checking for existing file ***********************'
   if [ -e '/opt/sublime_text/libsublime-imfix.so' ]
     then
     echo ''
-    echo '**************** libsublime-imfix.so is already existing ****'
+    echo '*********** replacing libsublime-imfix.so with new one *******'
     sudo rm /opt/sublime_text/libsublime-imfix.so
     sudo cp ./lib/libsublime-imfix.so /opt/sublime_text/
   else
@@ -98,7 +98,7 @@ then
   fi
 
   echo ''
-  echo '**************** Replacing subl with new one ****************'
+  echo '*********** Replacing subl with new one **********************'
   echo ''
   if [ -e '/usr/bin/subl' ]
     then
@@ -106,7 +106,7 @@ then
   fi
   sudo cp ./src/subl /usr/bin/
 
-  echo '**************** Replacing sublime-text.desktop with new one ****************'
+  echo '*********** Replacing sublime-text.desktop with new one ******'
   for file in /usr/share/applications/sublime{-,_}text.desktop; do
     if [ -e $file ]
       then
@@ -115,12 +115,13 @@ then
       break
     fi
   done
-
-  echo '**************** Sublime Text input method problem fixed! ****'
+  
   echo ''
-  echo '**************** More: Installing extra skins ****************'
+  echo '*********** Sublime Text input method problem fixed! *********'
   echo ''
-  echo '**************** Unpacking skin into current directory ********'
+  echo '*********** More: Installing extra skins *********************'
+  echo ''
+  echo '*********** Unpacking skin into current directory ************'
   echo ''
   tar -zxvf src/anran.tar.gz
 

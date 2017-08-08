@@ -15,6 +15,8 @@ This repo is aimed at doing the following three things:
 
 + (new) Now, Sublime opened by Icon.desktop can also use Fcitx Input（Dash Icon also work）
 
++ (new) Fix cursor position not update bug
+
 ## **Important Note**
 
 + **Sublime Text 3 input method fix only works when executing from terminal, such as `subl .`**
@@ -56,7 +58,7 @@ cd sublime-text-imfix
 
 
 ```bash
-gcc -shared -o libsublime-imfix.so sublime_imfix.c  `pkg-config --libs --cflags gtk+-2.0` -fPIC
+gcc -shared -o libsublime-imfix.so sublime-imfix.c  `pkg-config --libs --cflags gtk+-2.0` -fPIC
 ```
 
 --------------
@@ -73,6 +75,7 @@ gcc -shared -o libsublime-imfix.so sublime_imfix.c  `pkg-config --libs --cflags 
 
 + (new) 修复了 "Package Preference" 无法打开的问题, 感谢 @liberize
 + (new) 通过 Ubuntu 系统图标打开的 Sublime 也支持 Fcitx 输入中文了
++ (new) 修复了输入法不跟随的Bug
 
 ## **注意**
 
