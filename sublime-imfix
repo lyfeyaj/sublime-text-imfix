@@ -92,9 +92,9 @@ then
     echo ''
     echo '*********** replacing libsublime-imfix.so with new one *******'
     sudo rm /opt/sublime_text/libsublime-imfix.so
-    sudo cp ./lib/libsublime-imfix.so /opt/sublime_text/
+    sudo cp ./lib/libsublime-imfix.so /opt/sublime_text_3/
   else
-    sudo cp ./lib/libsublime-imfix.so /opt/sublime_text/
+    sudo cp ./lib/libsublime-imfix.so /opt/sublime_text_3/
   fi
 
   echo ''
