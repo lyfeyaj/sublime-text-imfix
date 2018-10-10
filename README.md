@@ -11,7 +11,7 @@ This repo is aimed at doing the following three things:
 
 ## Updates
 
-+ (new) Fix "Package Preference" cannot open issue. Thanks for @liberize
++ (new) Fix "Package Preference" cannot open issue. Thanks for [@liberize](https://github.com/liberize)
 + (new) Now, Sublime opened by Icon.desktop can also use Fcitx Input（Dash Icon also work）
 + (new) Fix cursor position not update bug
 + (new) Support 32-bit system. Thanks for [@inouetoukyou](https://github.com/inouetoukyou)
@@ -72,9 +72,10 @@ gcc -shared -o libsublime-imfix.so sublime-imfix.c  `pkg-config --libs --cflags 
 
 ## 更新
 
-+ (new) 修复了 "Package Preference" 无法打开的问题, 感谢 @liberize
++ (new) 修复了 "Package Preference" 无法打开的问题, 感谢 [@liberize](https://github.com/liberize)
 + (new) 通过 Ubuntu 系统图标打开的 Sublime 也支持 Fcitx 输入中文了
-+ (new) 修复了输入法不跟随的Bug
++ (new) 修复了输入法不跟随的 Bug
++ (new) 支持 32位 系统. 感谢 [@inouetoukyou](https://github.com/inouetoukyou)
 
 ## **注意**
 
