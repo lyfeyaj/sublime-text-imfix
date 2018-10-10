@@ -12,10 +12,9 @@ This repo is aimed at doing the following three things:
 ## Updates
 
 + (new) Fix "Package Preference" cannot open issue. Thanks for @liberize
-
 + (new) Now, Sublime opened by Icon.desktop can also use Fcitx Input（Dash Icon also work）
-
 + (new) Fix cursor position not update bug
++ (new) Support 32-bit system. Thanks for [@inouetoukyou](https://github.com/inouetoukyou)
 
 ## **Important Note**
 
