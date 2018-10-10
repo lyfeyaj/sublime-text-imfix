@@ -93,7 +93,13 @@ then
     echo ''
     echo '*********** replacing libsublime-imfix.so with new one *******'
     sudo rm /opt/sublime_text/libsublime-imfix.so
-    sudo cp ./lib/libsublime-imfix.so /opt/sublime_text/
+    if [ `getconf LONG_BIT` -eq 32 ];then
+        sudo cp ./lib/libsublime-imfix-32bits.so /opt/sublime_text/libsublime-imfix.so
+    else
+        sudo cp ./lib/libsublime-imfix.so /opt/sublime_text/
+    fi
+  elif [ `getconf LONG_BIT` -eq 32 ];then
+    sudo cp ./lib/libsublime-imfix-32bits.so /opt/sublime_text/libsublime-imfix.so
   else
     sudo cp ./lib/libsublime-imfix.so /opt/sublime_text/
   fi
