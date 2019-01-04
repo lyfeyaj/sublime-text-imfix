@@ -1,6 +1,8 @@
 Sublime Text 3 Input Method(Fcitx) Fix [Ubuntu(Debian)]
 ==========================================================
 
+> This fix may not work in Sublime Text GTK3 build 3181+, [see issue #68](https://github.com/lyfeyaj/sublime-text-imfix/issues/68). **HELP WANTED!!**
+
 ## Main Purposes
 
 This repo is aimed at doing the following three things:
