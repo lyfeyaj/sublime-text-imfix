@@ -102,6 +102,7 @@ else
     else
       echo '*********** Fcitx installed failed! *******************'
       echo ''
+    fi
   else
     echo ''
     echo '*********** Skip installing Sublime Text 3 *****************'
