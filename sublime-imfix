@@ -1,7 +1,8 @@
 #!/bin/bash
 
 echo "Ensure apt is set up to work with https sources ..........."
-sudo apt-get update && sudo apt-get install -y wget apt-transport-https software-properties-common
+sudo apt-get update >> /dev/null
+sudo apt-get install -y wget apt-transport-https software-properties-common >> /dev/null
 
 echo "Checking for installation of Sublime Text 3..........."
 if which subl
