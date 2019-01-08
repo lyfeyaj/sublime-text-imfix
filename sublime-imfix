@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "Ensure apt is set up to work with https sources ..........."
+sudo apt-get update && sudo apt-get install -y wget apt-transport-https software-properties-common
+
 echo "Checking for installation of Sublime Text 3..........."
 if which subl
 then
@@ -63,7 +66,7 @@ else
     echo ''
     echo '*********** Installing Fcitx and Pinyin methods ************'
     echo ''
-    sudo apt-get install -y fcitx fcitx-config-gtk fcitx-sunpinyin fcitx-googlepinyin fcitx-module-cloudpinyin fcitx-sogoupinyin >> /dev/null
+    sudo apt-get install -y fcitx fcitx-config-gtk fcitx-sunpinyin fcitx-googlepinyin fcitx-module-cloudpinyin >> /dev/null
 
     echo ''
     echo '*********** Installing Fcitx related libs ******************'
@@ -122,7 +125,7 @@ then
       break
     fi
   done
-  
+
   echo ''
   echo '*********** Sublime Text input method problem fixed! *********'
   echo ''
