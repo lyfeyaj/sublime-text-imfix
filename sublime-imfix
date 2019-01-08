@@ -1,8 +1,8 @@
 #!/bin/bash
 
-echo "Ensure apt is set up to work with https sources ..........."
+echo "Ensure apt is set up to work with https sources and install dependencies ..........."
 sudo apt-get update >> /dev/null
-sudo apt-get install -y wget apt-transport-https software-properties-common >> /dev/null
+sudo apt-get install -y wget apt-transport-https software-properties-common build-essential libgtk2.0-dev >> /dev/null
 
 echo "Checking for installation of Sublime Text 3..........."
 if which subl
@@ -55,31 +55,53 @@ else
   if [ $fcitx_input == 'Y' ] || [ $fcitx_input == 'y' ]
   then
     echo ''
-    echo '*********** Adding Fcitx PPA *******************************'
-    echo ''
-    sudo add-apt-repository -y ppa:fcitx-team/nightly
-
-    echo ''
-    echo '*********** Updating system ********************************'
-    echo ''
-    sudo apt-get update >> /dev/null
-
-    echo ''
     echo '*********** Installing Fcitx and Pinyin methods ************'
     echo ''
-    sudo apt-get install -y fcitx fcitx-config-gtk fcitx-sunpinyin fcitx-googlepinyin fcitx-module-cloudpinyin >> /dev/null
+    sudo apt install -y fcitx-bin fcitx-googlepinyin fcitx-table >> /dev/null
 
-    echo ''
-    echo '*********** Installing Fcitx related libs ******************'
-    echo ''
-    sudo apt-get install -y build-essential libgtk2.0-dev >> /dev/null
-    sudo apt-get install -y fcitx-table-all >> /dev/null
+    if ! which fcitx
+    then
+      echo ''
+      echo '*********** Trying the old way to install Fcitx ************'
+      echo ''
+      echo '*********** Adding Fcitx PPA *******************************'
+      echo ''
+      sudo add-apt-repository -y ppa:fcitx-team/nightly
 
-    echo ''
-    echo '*********** Fcitx installed successfully! *******************'
-    echo ''
-    echo '*********** Setting Fcitx as the default input method! ******'
-    im-switch -s fcitx -z default
+      echo ''
+      echo '*********** Updating system ********************************'
+      echo ''
+      sudo apt-get update >> /dev/null
+
+      echo ''
+      echo '*********** Installing Fcitx and Pinyin methods ************'
+      echo ''
+      sudo apt-get install -y fcitx fcitx-config-gtk fcitx-sunpinyin fcitx-googlepinyin fcitx-module-cloudpinyin >> /dev/null
+
+      echo ''
+      echo '*********** Installing Fcitx related libs ******************'
+      echo ''
+      sudo apt-get install -y fcitx-table-all >> /dev/null
+    fi
+
+    if which fcitx
+    then
+      echo ''
+      echo '*********** Fcitx installed successfully! *******************'
+      echo ''
+      echo '*********** Setting Fcitx as the default input method! ******'
+      if which im-switch
+      then
+        im-switch -s fcitx -z default
+      else
+        if which im-config
+        then
+          im-config -n fctix
+        fi
+      fi
+    else
+      echo '*********** Fcitx installed failed! *******************'
+      echo ''
   else
     echo ''
     echo '*********** Skip installing Sublime Text 3 *****************'
