@@ -57,7 +57,7 @@ else
     echo ''
     echo '*********** Installing Fcitx and Pinyin methods ************'
     echo ''
-    sudo apt install -y fcitx-bin fcitx-googlepinyin fcitx-table >> /dev/null
+    sudo apt-get install -y fcitx-bin fcitx-googlepinyin fcitx-table >> /dev/null
 
     if ! which fcitx
     then
